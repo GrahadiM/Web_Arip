@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arif Punya</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white" style="background-color: rgb(228, 228, 228);">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img style="height: 75px;" src="dist/img/LogoEsgul2.png" alt="AdminLTE Logo" class="brand-image">
+        <span style="color: rgb(238, 119, 39); font-size: 36px;" class="brand-text font-weight-bold">Repository Magister Ilmu Komputer</span>
+      </a>
+
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a  href="index.html" class="nav-link">
+              <i class="fas fa-home"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="FAQ.html" class="nav-link">
+              <i class="fas fa-question"></i>
+              FAQ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contactUs.html" class="nav-link">
+              <i class="fas fa-phone-alt"></i>
+              Contact Us
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <i class="fas fa-sign-in-alt"></i>
+              Login
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right navbar links -->
+      <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto"></ul>
+    </div>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container">
+        <div class="row mb-2">
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header text-white bg-primary">
+                  Upload Data
+                </div>
+                <!-- form start -->
+                <form>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="inputJudulThesis">Judul Thesis</label>
+                      <input type="text" class="form-control" id="inputJudulThesis" placeholder="Masukkan Judul Thesis">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputJudulThesisEN">Judul Thesis EN</label>
+                      <input type="text" class="form-control" id="inputJudulThesisEN" placeholder="Masukkan Judul ThesisEN">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputTopikThesis">Topik Thesis</label>
+                      <input type="text" class="form-control" id="inputTopikThesis" placeholder="Masukkan Topik Thesis">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputTopikThesisEN">Topik Thesis EN</label>
+                      <input type="text" class="form-control" id="inputTopikThesisEN" placeholder="Masukkan Topik Thesis EN">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAbstrak">Abstrak</label>
+                      <textarea class="form-control" id="inputAbstrak" rows="8"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputDosenPembimbing">Dosen Pembimbing</label>
+                      <input type="text" class="form-control" id="inputDosenPembimbing" placeholder="Masukkan Dosen Pembimbing">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">File input</label>
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="exampleInputFile">
+                          <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        </div>
+                        <div class="input-group-append">
+                          <span class="input-group-text">Upload</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+
+                  <div class="card-footer text-center">
+                      <button type="submit" class="btn btn-warning">Submit</button>
+                      <button type="submit" class="btn btn-danger">Batal</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2021 <a href="">Arif S</a>.</strong> All rights reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+</body>
+</html>
