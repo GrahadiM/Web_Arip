@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('app')
-@if ($message = Session::get('success'))
+{{-- @if ($message = Session::get('success'))
     <!-- Page specific script -->
     <script>
         $(function() {
@@ -13,6 +13,11 @@
             });
         });
     </script>
+@endif --}}
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+    <p>{{ $message }}</p>
+</div>
 @endif
 @endsection
 

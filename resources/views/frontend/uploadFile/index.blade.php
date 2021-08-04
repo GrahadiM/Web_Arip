@@ -46,12 +46,13 @@
                         <input name="judul_tesis_en" type="text" class="form-control" id="inputJudulThesisEN" placeholder="Masukkan Judul ThesisEN">
                     </div>
                     <div class="form-group">
-                        <label for="inputTopikThesis">Topik Thesis</label>
-                        <input name="topik_tesis" type="text" class="form-control" id="inputTopikThesis" placeholder="Masukkan Topik Thesis">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputTopikThesisEN">Topik Thesis EN</label>
-                        <input name="topik_tesis_en" type="text" class="form-control" id="inputTopikThesisEN" placeholder="Masukkan Topik Thesis EN">
+                        <label>Topik</label>
+                        <select name="topik_id" class="form-control select2">
+                            <option selected="selected" disabled>Pilih Topik File</option>
+                            @foreach ($topiks as $topik)
+                            <option value="{{ $topik->id }}">{{ $topik->nama }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="inputAbstrak">Abstrak</label>

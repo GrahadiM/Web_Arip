@@ -17,12 +17,11 @@ class CreateUploadFilesTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('kategori_id');
+            $table->bigInteger('topik_id');
             $table->string('status')->nullable();
             $table->string('judul_tesis');
             $table->string('judul_tesis_en');
-            $table->string('topik_tesis');
-            $table->string('topik_tesis_en');
-            $table->string('abstrak');
+            $table->text('abstrak');
             $table->string('dosen_pembimbing');
             $table->string('file');
             $table->timestamps();

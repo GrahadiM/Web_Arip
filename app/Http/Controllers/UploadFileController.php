@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
+use App\Models\Topik;
 use App\Models\UploadFile;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class UploadFileController extends Controller
     public function index()
     {
         $kategoris = Kategori::all();
-        return view('frontend.uploadFile.index', compact('kategoris'));
+        $topiks = Topik::all();
+        return view('frontend.uploadFile.index', compact('kategoris', 'topiks'));
     }
     public function store(Request $request)
     {
@@ -25,8 +27,7 @@ class UploadFileController extends Controller
             "kategori_id" => "required",
             "judul_tesis" => "required",
             "judul_tesis_en" => "required",
-            "topik_tesis" => "required",
-            "topik_tesis_en" => "required",
+            "topik_id" => "required",
             "abstrak" => "required",
             "dosen_pembimbing" => "required",
             // "file" => "nullable|csv,txt,xlx,xls,pdf|max:2048",
@@ -34,10 +35,8 @@ class UploadFileController extends Controller
 
         if ($request->hasFile(["file"])) {
             $file = $request->file(["file"]);
-            $filename = 
-            $file->getClientOriginalName() . "-" . 
-            time() . "." . 
-            $file->getClientOriginalExtension();
+            $filenameOri = $file->getClientOriginalName();
+            $filename = time() . "-" . $filenameOri;
 
             $file->move('file/sertifikat', $filename);
 
@@ -49,8 +48,7 @@ class UploadFileController extends Controller
                 "status" => "Non-Active",
                 "judul_tesis" => $request->judul_tesis,
                 "judul_tesis_en" => $request->judul_tesis_en,
-                "topik_tesis" => $request->topik_tesis,
-                "topik_tesis_en" => $request->topik_tesis_en,
+                "topik_id" => $request->topik_id,
                 "abstrak" => $request->abstrak,
                 "dosen_pembimbing" => $request->dosen_pembimbing,
                 "file" => $filename,

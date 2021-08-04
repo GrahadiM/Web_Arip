@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
                 StatusSeeder::class,
                 UsersSeeder::class,
                 KategoriSeeder::class,
+                TopikSeeder::class,
                 // UploadFileSeeder::class,
             ]
         );

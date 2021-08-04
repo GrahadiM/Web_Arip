@@ -31,16 +31,32 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                 <!-- SEARCH FORM -->
-                <form class="form-inline">
-                    <div class="row">
-                        <div class="col-10">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                        </div>
-                        <div class="col-2">
-                            <button type="submit" class="btn btn-warning">Search</button>
+                <form href="{{ url('search') }}" class="form-inline" method="GET">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-10">
+                                <select name="topik_id" id="search" class="form-control select2 form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                    <option selected="selected" disabled>Pilih Topik File</option>
+                                    @foreach ($topiks as $topik)
+                                    <option value="{{ $topik->id }}">{{ $topik->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            {{-- <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search"> --}}
+                            <div class="col-2">
+                                {{-- <a href="" type="submit" class="btn btn-warning">Search</a> --}}
+                                <button type="submit" class="btn btn-warning">Search</button>
+                            </div>
                         </div>
                     </div>
                 </form>
+                {{-- <form class="form" method="get" action="{{ route('search') }}">
+                    <div class="form-group w-100 mb-3">
+                        <label for="search" class="d-block mr-2">Pencarian</label>
+                        <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan keyword">
+                        <button type="submit" class="btn btn-primary mb-1">Cari</button>
+                    </div>
+                </form> --}}
                 </li>
             </ul>
             </div>
