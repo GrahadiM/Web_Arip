@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use PDF;
 use App\Models\Kategori;
 use App\Models\Topik;
 use App\Models\UploadFile;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -53,6 +53,7 @@ class FrontendController extends Controller
     public function file($id)
     {
         $file = UploadFile::find($id);
+        // dd($file);
         return view('frontend.file', compact('file'));
     }
     public function search(Request $request)
@@ -61,12 +62,12 @@ class FrontendController extends Controller
         $topiks = Topik::where('nama', 'like', "%" . $keyword . "%")->paginate(10);
         return view('frontend.topik', compact('topiks'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
-    // public function exportPDF()
-    // {
-    //     $file = UploadFile::get();
-    //     $pdf = PDF::loadView('sembako', compact('datas'));
-    //     return $pdf->download('laporan_sembako_'.date('Y-m-d_H-i-s').'.pdf');
-    // }
+    public function exportPDF()
+    {
+        $file = UploadFile::get();
+        $pdf = PDF::loadView('sembako', compact('file'));
+        return $pdf->download('laporan_sembako_'.date('Y-m-d_H-i-s').'.pdf');
+    }
     // public function cetak_pdf()
     // {
     //     $file = UploadFile::where('file', 'file');

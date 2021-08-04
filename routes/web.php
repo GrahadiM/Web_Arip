@@ -11,7 +11,7 @@ Route::get('/kategori/{id}', [App\Http\Controllers\FrontendController::class, 'k
 Route::get('/topik', [App\Http\Controllers\FrontendController::class, 'topik']);
 Route::get('/search', [App\Http\Controllers\FrontendController::class, 'search'])->name('search');
 Route::get('/file/{id}', [App\Http\Controllers\FrontendController::class, 'file']);
-// Route::get('/export-pdf', [App\Http\Controllers\FrontendController::class, 'exportPDF']);
+// Route::get('/exportpdf/{file}', [App\Http\Controllers\FrontendController::class, 'exportPDF']);
 Route::get('/download', function () {return redirect('/download');});
 
 Auth::routes();
