@@ -23,10 +23,10 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Judul</h3>
-                <div class="d-flex justify-content-end">
+                <h3 class="card-title">List Komentar</h3>
+                {{-- <div class="d-flex justify-content-end">
                     <a href="" class="btn btn-sm btn-outline-primary">Create</a>
-                </div>
+                </div> --}}
             </div>
             <!-- /.card-header -->
             <div class="card-body">
