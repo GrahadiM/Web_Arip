@@ -25,13 +25,13 @@
                         FAQ
                         </a>
                     </li>
+                    @guest
                     <li class="nav-item">
                         <a href="{{ url('/contactUs') }}" class="nav-link">
                         <i class="fas fa-phone-alt"></i>
                         Contact Us
                         </a>
                     </li>
-                    @guest
                     <li class="nav-item">
                         <a href="{{ route('login') }}" class="nav-link">
                             <i class="fas fa-sign-in-alt"></i>
@@ -39,6 +39,21 @@
                         </a>
                     </li>
                     @else
+                    @if (auth()->user()->role_id == 1)
+                    <li class="nav-item">
+                        <a href="{{ route('contactAdmin.index') }}" class="nav-link">
+                        <i class="fas fa-phone-alt"></i>
+                        Contact Us
+                        </a>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a href="{{ url('/contactUs') }}" class="nav-link">
+                        <i class="fas fa-phone-alt"></i>
+                        Contact Us
+                        </a>
+                    </li>
+                    @endif
                     <li class="nav-item">
                         <a href="{{ route('login') }}" class="nav-link">
                             <i class="fas fa-sign-in-alt"></i>

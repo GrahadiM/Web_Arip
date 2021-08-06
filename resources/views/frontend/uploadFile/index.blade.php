@@ -59,6 +59,10 @@
                         <textarea name="abstrak" class="form-control" id="inputAbstrak" rows="8"></textarea>
                     </div>
                     <div class="form-group">
+                        <label for="inputLokasi">Lokasi Penelitian</label>
+                        <input name="lokasi" type="text" class="form-control" id="inputLokasi" placeholder="Masukkan Lokasi Penelitian">
+                    </div>
+                    <div class="form-group">
                         <label for="inputDosenPembimbing">Dosen Pembimbing</label>
                         <input name="dosen_pembimbing" type="text" class="form-control" id="inputDosenPembimbing" placeholder="Masukkan Dosen Pembimbing">
                     </div>

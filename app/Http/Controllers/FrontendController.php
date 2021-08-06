@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
+use App\Models\Komentar;
 use App\Models\Topik;
 use App\Models\UploadFile;
 use Barryvdh\DomPDF\PDF;
@@ -32,9 +33,25 @@ class FrontendController extends Controller
     {
         return view('frontend.contactUs');
     }
-    public function kirimPesan()
+    public function contactPost(Request $request)
     {
-        return view('frontend.contactUs');
+
+        // dd($request->all());
+        $request->validate([
+            "nama" => "required",
+            "email" => "required",
+            "subjek" => "required",
+            "detail" => "required",
+        ]);
+
+        Komentar::create([
+            "nama" => $request->nama,
+            "email" => $request->email,
+            "subjek" => $request->subjek,
+            "detail" => $request->detail,
+        ]);
+    	
+    	return redirect()->back()->with('status', 'Upload Komentar Berhasil!');
     }
     public function kategori($id)
     {

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'index']);
 Route::get('/faq', [App\Http\Controllers\FrontendController::class, 'faq']);
 Route::get('/contactUs', [App\Http\Controllers\FrontendController::class, 'contactUs']);
-Route::post('/kirimPesan', [App\Http\Controllers\FrontendController::class, 'kirimPesan']);
+Route::post('/contactPost', [App\Http\Controllers\FrontendController::class, 'contactPost']);
 Route::get('/kategori/{id}', [App\Http\Controllers\FrontendController::class, 'kategori']);
 Route::get('/topik', [App\Http\Controllers\FrontendController::class, 'topik']);
 Route::get('/search', [App\Http\Controllers\FrontendController::class, 'search'])->name('search');
@@ -26,4 +26,5 @@ Route::middleware(['auth', 'role:1,2'])->group(function () {
 //Role Admin
 Route::middleware(['auth', 'role:1'])->group(function () {
     Route::resource('/validasi', App\Http\Controllers\ValidasiController::class, ['only' => ['index', 'edit', 'update', 'delete']]);
+    Route::resource('/contactAdmin', App\Http\Controllers\KomentarController::class, ['only' => ['index', 'edit', 'update', 'delete']]);
 });

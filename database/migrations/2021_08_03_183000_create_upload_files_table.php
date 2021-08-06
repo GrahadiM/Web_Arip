@@ -22,6 +22,7 @@ class CreateUploadFilesTable extends Migration
             $table->string('judul_tesis');
             $table->string('judul_tesis_en');
             $table->text('abstrak');
+            $table->string('lokasi')->nullable();
             $table->string('dosen_pembimbing');
             $table->string('file');
             $table->timestamps();

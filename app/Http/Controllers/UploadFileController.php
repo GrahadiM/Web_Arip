@@ -55,6 +55,6 @@ class UploadFileController extends Controller
             ]);
         }
     	
-    	return redirect()->back()->with('status', 'Data Created!')->with('status', 'Upload File Berhasil!');
+    	return redirect()->back()->with('status', 'Upload File Berhasil!');
     }
 }

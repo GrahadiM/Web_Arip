@@ -20,6 +20,7 @@ class UploadFile extends Model
         'topik_tesis',
         'topik_tesis_en',
         'abstrak',
+        'lokasi',
         'dosen_pembimbing',
         'file',
     ];
