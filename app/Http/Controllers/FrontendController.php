@@ -9,6 +9,7 @@ use App\Models\Topik;
 use App\Models\UploadFile;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
@@ -63,7 +64,8 @@ class FrontendController extends Controller
     public function topik()
     {
         $topiks = Topik::all();
-        return view('frontend.allTopik', compact('topiks'));
+        $subtopik = SubTopik::all();
+        return view('frontend.allTopik', compact('topiks', 'subtopik'));
     }
     public function subtopik($id)
     {

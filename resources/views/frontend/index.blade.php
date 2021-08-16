@@ -53,13 +53,19 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header text-white bg-primary">
-                        Cari Berdasarkan Kategori
+                        Pencarian
                     </div>
                     <div class="card-body">
-                        <p>Cari File berdasarkan Sub Topik yang tersedia.</p>
-                        <a href="{{ route('topik') }}" class="btn btn-sm btn-primary">
-                            Klik untuk pencarian
-                        </a>
+                        <div class="row">
+                            <div class="col-9">
+                                Keyword Ilmu Komputer.
+                            </div>
+                            <div class="col-3">
+                                <a href="{{ route('topik') }}" class="btn btn-sm btn-primary">
+                                    Search
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
