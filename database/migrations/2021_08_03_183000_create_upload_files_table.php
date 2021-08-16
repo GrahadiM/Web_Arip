@@ -17,7 +17,7 @@ class CreateUploadFilesTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('kategori_id');
-            $table->bigInteger('topik_id');
+            $table->bigInteger('subtopik_id');
             $table->string('status')->nullable();
             $table->string('judul_tesis');
             $table->string('judul_tesis_en');

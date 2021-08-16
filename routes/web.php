@@ -8,11 +8,11 @@ Route::get('/faq', [App\Http\Controllers\FrontendController::class, 'faq']);
 Route::get('/contactUs', [App\Http\Controllers\FrontendController::class, 'contactUs']);
 Route::post('/contactPost', [App\Http\Controllers\FrontendController::class, 'contactPost']);
 Route::get('/kategori/{id}', [App\Http\Controllers\FrontendController::class, 'kategori']);
-Route::get('/topik', [App\Http\Controllers\FrontendController::class, 'topik']);
+Route::get('/topik', [App\Http\Controllers\FrontendController::class, 'topik'])->name('topik');
+Route::get('/subtopik/{id}', [App\Http\Controllers\FrontendController::class, 'subtopik'])->name('subtopik');
+Route::get('/allfile/{id}', [App\Http\Controllers\FrontendController::class, 'allfile'])->name('allfile');
 Route::get('/search', [App\Http\Controllers\FrontendController::class, 'search'])->name('search');
 Route::get('/file/{id}', [App\Http\Controllers\FrontendController::class, 'file']);
-// Route::get('/exportpdf/{file}', [App\Http\Controllers\FrontendController::class, 'exportPDF']);
-Route::get('/download', function () {return redirect('/download');});
 
 Auth::routes();
 
@@ -20,7 +20,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Role Admin dan Mahasiswa
 Route::middleware(['auth', 'role:1,2'])->group(function () {
-    Route::resource('/uploadFile', App\Http\Controllers\UploadFileController::class, ['only' => ['index', 'store']]);
+    Route::resource('/uploadFile', App\Http\Controllers\UploadFileController::class, ['only' => ['index', 'store', 'destroy']]);
 });
 
 //Role Admin

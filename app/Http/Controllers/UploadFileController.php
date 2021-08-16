@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
-use App\Models\Topik;
+use App\Models\SubTopik;
 use App\Models\UploadFile;
 use Illuminate\Http\Request;
 
@@ -16,8 +16,8 @@ class UploadFileController extends Controller
     public function index()
     {
         $kategoris = Kategori::all();
-        $topiks = Topik::all();
-        return view('frontend.uploadFile.index', compact('kategoris', 'topiks'));
+        $subtopiks = SubTopik::all();
+        return view('frontend.uploadFile.index', compact('kategoris', 'subtopiks'));
     }
     public function store(Request $request)
     {
@@ -27,7 +27,7 @@ class UploadFileController extends Controller
             "kategori_id" => "required",
             "judul_tesis" => "required",
             "judul_tesis_en" => "required",
-            "topik_id" => "required",
+            "subtopik_id" => "required",
             "abstrak" => "required",
             "dosen_pembimbing" => "required",
             // "file" => "nullable|csv,txt,xlx,xls,pdf|max:2048",
@@ -48,7 +48,7 @@ class UploadFileController extends Controller
                 "status" => "Non-Active",
                 "judul_tesis" => $request->judul_tesis,
                 "judul_tesis_en" => $request->judul_tesis_en,
-                "topik_id" => $request->topik_id,
+                "subtopik_id" => $request->subtopik_id,
                 "abstrak" => $request->abstrak,
                 "dosen_pembimbing" => $request->dosen_pembimbing,
                 "file" => $filename,
@@ -56,5 +56,12 @@ class UploadFileController extends Controller
         }
     	
     	return redirect()->back()->with('status', 'Upload File Berhasil!');
+    }
+    public function destroy($id)
+    {
+        $file = UploadFile::find($id);
+        $file->delete();
+
+        return back();
     }
 }

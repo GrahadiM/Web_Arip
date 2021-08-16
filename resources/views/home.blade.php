@@ -19,6 +19,12 @@
                     {{ __('You are name ') }}{{ Auth::user()->name }} <br>
                     {{ __('You are role ') }}{{ Auth::user()->role->name }} <br>
                     {{ __('You are logged in!') }} <br>
+                    @if(auth()->user()->role->id == 1)
+                    <hr>
+                    {{ __('Total File : ') }} {{ \DB::table('upload_files')->count() }}<br>
+                    {{ __('Total Topik : ') }} {{ \DB::table('topiks')->count() }}<br>
+                    {{ __('Total Sub Topik : ') }} {{ \DB::table('sub_topiks')->count() }}<br>
+                    @endif
                 </div>
             </div>
         </div>

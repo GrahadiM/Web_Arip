@@ -13,8 +13,11 @@
                     <div class="row">
                         <h6 style="color: grey;" class="col-sm-6">Dosen Pembimbing : {{ $file->dosen_pembimbing }}</h6>
                         <h6 style="color: grey;" class="col-sm-6 d-flex justify-content-end">Tanggal Upload : {{ $file->created_at->format('Y-m-d') }}</h6>
+                        <h6 style="color: grey;" class="col-sm-12">Topik Bahasa Indonesia : {{ $file->subtopik->topik->nama }}</h6>
+                        <h6 style="color: grey;" class="col-sm-12">Topik Bahasa Inggris   : {{ $file->subtopik->topik->nama_en }}</h6>
+                        <h6 style="color: grey;" class="col-sm-12">Sub Topik : {{ $file->subtopik->nama }}</h6>
                     </div>
-                    <span style="color: grey;">{!! $file->abstrak !!}</span>
+                    <div style="color: grey;" class="mt-3">{!! $file->abstrak !!}</div>
                     <div class="row mt-5">
                         <div class="col-sm-6">
                             <a href="{{ url('file/sertifikat', $file->file) }}">

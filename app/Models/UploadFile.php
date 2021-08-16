@@ -13,7 +13,7 @@ class UploadFile extends Model
     [
         'user_id',
         'kategori_id',
-        'topik_id',
+        'subtopik_id',
         'status',
         'judul_tesis',
         'judul_tesis_en',
@@ -35,5 +35,9 @@ class UploadFile extends Model
     public function topik()
     {
         return $this->belongsTo('App\Models\Topik');
+    }
+    public function subtopik()
+    {
+        return $this->belongsTo('App\Models\SubTopik');
     }
 }

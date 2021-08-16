@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
                 UsersSeeder::class,
                 KategoriSeeder::class,
                 TopikSeeder::class,
+                SubTopikSeeder::class,
                 // UploadFileSeeder::class,
             ]
         );
