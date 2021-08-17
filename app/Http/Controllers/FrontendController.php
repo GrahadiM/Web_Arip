@@ -64,7 +64,7 @@ class FrontendController extends Controller
     public function topik()
     {
         $topiks = Topik::all();
-        $subtopik = SubTopik::all();
+        $subtopik = SubTopik::where('topik_id', 'id')->get();
         return view('frontend.allTopik', compact('topiks', 'subtopik'));
     }
     public function subtopik($id)
